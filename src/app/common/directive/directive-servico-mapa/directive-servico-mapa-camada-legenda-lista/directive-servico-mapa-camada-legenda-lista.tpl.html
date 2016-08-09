@@ -1,0 +1,11 @@
+<div>
+    <div class="row row-eq-height" ng-repeat="legenda in source.esri.legends.layers[camada.id].legend">
+        <div class="col-xs-12" style="padding: 0px 10px;border-bottom: 1px solid #ddd;">
+            <div class="pull-left" style="background:url(data:{{legenda.contentType}};base64,{{legenda.imageData}}) no-repeat left center;
+                            height:{{legenda.height}}px;
+                            width:{{legenda.width}}px;
+                            margin-right: 10px;"></div>
+            <b class="pull-left text-elipsis" style="max-width: calc(100% - {{legenda.width+10}}px);">{{legenda.label?legenda.label:'Sem descrição Definida'}}</b>
+        </div>
+    </div>
+</div>

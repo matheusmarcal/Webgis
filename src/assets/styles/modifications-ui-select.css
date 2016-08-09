@@ -1,0 +1,25 @@
+.ui-select-bootstrap > .ui-select-match > .btn {
+    text-align: left !important;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-select-bootstrap .ui-select-choices-row > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.ui-select-match-text.pull-left {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

@@ -1,0 +1,25 @@
+#layout-top {
+    height: 100%;
+}
+
+#layout-top i {
+    font-size: 222%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#layout-top i:hover {
+    transform: scale(1.4, 1.4);
+}
+
+#layout-top > div {
+    height: 100%;
+}
+
+#layout-top i.menu-left {
+
+}
+
+#layout-top i.menu-right {
+
+}

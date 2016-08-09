@@ -1,0 +1,86 @@
+/*Panel-Tables*/
+
+.panel.panel-table {
+    border-radius: 0px;
+    margin-bottom: 5px;
+}
+
+.panel.panel-table .align-center > div {
+
+}
+
+.panel.panel-table .align-center > div > button {
+
+}
+
+.panel.panel-table .panel-heading {
+
+}
+
+.panel.panel-table .panel-heading > .row > div {
+
+}
+
+.panel.panel-table .panel-body {
+    padding: 0px 0px;
+}
+
+.panel.panel-table .panel-body > div > .row {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 4px 0px;
+}
+
+.panel.panel-table .panel-body > div > .row:last-child {
+    border-bottom: none;
+}
+
+.panel-table-search {
+    margin: 20px;
+}
+
+.panel.panel-table .btn-toolbar > .panel.panel-table .btn,
+.panel.panel-table .btn-toolbar > .btn-group,
+.panel.panel-table .btn-toolbar > .input-group {
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hidden-md {
+        display: none !important;
+    }
+
+    .row-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hidden-lg {
+        display: none !important;
+    }
+
+    .row-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+.btn.btn-full-width {
+    width: 100%;
+}
+
+.modal-dialog {
+    width: 95%;
+    margin: 10px auto;
+}

@@ -1,0 +1,30 @@
+<div class="row entry">
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <i style="line-height: 1.228571;margin-right: 5px;" class="pull-right glyphicon"
+                   ng-class="{'glyphicon-chevron-up': interface.opened, 'glyphicon-chevron-down': !interface.opened}"
+                   ng-click="interface.opened = !interface.opened"
+                   data-toggle="collapse" href="#panel-body-map-services"></i>
+                <b class="text-elipsis">Serviços de Mapa</b>
+            </div>
+        </div>
+    </div>
+    <div class="body" uib-collapse="!interface.opened">
+        <div class="row entry" ng-repeat="servico in source">
+            <div class="header" title="{{servico.name}}">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <checkbox class="btn-default pull-left" style="margin-right: 10px;" ng-model="servico.visible"></checkbox>
+                        <b class="text-elipsis pull-left" style="max-width: calc(100% - 60px);">{{servico.name}}</b>
+                        <i style="line-height: 1.228571;margin-right: 5px;" class="glyphicon pull-right"
+                           ng-class="{'glyphicon-chevron-up': interface[servico.name].opened , 'glyphicon-chevron-down': !interface[servico.name].opened}"
+                           ng-click="interface[servico.name].opened = !interface[servico.name].opened"
+                           data-toggle="collapse" href="#panel-body-map-service-{{value.name}}"></i>
+                    </div>
+                </div>
+            </div>
+            <directive-servico-mapa-camada-lista class="body" style="max-height: 61vh;" uib-collapse="!interface[servico.name].opened" source="servico"></directive-servico-mapa-camada-lista>
+        </div>
+    </div>
+</div>

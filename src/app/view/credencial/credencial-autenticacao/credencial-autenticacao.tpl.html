@@ -1,0 +1,197 @@
+<div class="container-fluid autenticacao">
+    <div class="row">
+        <div class="hidden-xs col-sm-4"></div>
+        <div class="col-xs-12 col-sm-4 full-centered">
+            <div class="row">
+                <div class="col-xs-12 children-space-wrap formulario-autenticacao">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label class="control-label">Nome de Usuário</label>
+                            <input type="text" ng-model="vm.crud.autenticacao.UserName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label class="control-label">Senha</label>
+                            <input type="password" ng-model="vm.crud.autenticacao.Password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <ui-select search-enabled="false" ng-model="vm.crud.SempreAutenticado">
+                                <ui-select-match placeholder="Opções de Autenticação">
+                                    <span ng-bind="$select.selected.descricao"></span>
+                                </ui-select-match>
+                                <ui-select-choices repeat="item in vm.source.opcoesAutenticacao">
+                                    <span ng-bind="item.descricao"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-success btn-full-width" ng-click="vm.command.Autenticar()">Autenticar</button>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <button class="btn btn-default btn-full-width">Recuperar Senha</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button ng-click="vm.command.MostrarRegistrar()" class="btn btn-default btn-full-width">Registre-Se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute-full-size formulario-autenticacao-loading">
+                <div class="sk-cube-grid full-centered">
+                    <div class="sk-cube sk-cube1"></div>
+                    <div class="sk-cube sk-cube2"></div>
+                    <div class="sk-cube sk-cube3"></div>
+                    <div class="sk-cube sk-cube4"></div>
+                    <div class="sk-cube sk-cube5"></div>
+                    <div class="sk-cube sk-cube6"></div>
+                    <div class="sk-cube sk-cube7"></div>
+                    <div class="sk-cube sk-cube8"></div>
+                    <div class="sk-cube sk-cube9"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden-xs col-sm-4"></div>
+    </div>
+</div>
+<div id="modal-registro" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Registro</h4>
+            </div>
+            <div class="modal-body">
+                <form class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <label class="control-label">Nome</label>
+                            <input class="form-control" ng-model="vm.crud.registro.Nome" type="text">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <label class="control-label">RG</label>
+                            <input class="form-control" ng-model="vm.crud.registro.RG" type="text">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <label class="control-label">CPF</label>
+                            <input class="form-control" ng-model="vm.crud.registro.CPF" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row form-group">
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <label class="control-label">Email</label>
+                                    <input class="form-control" ng-model="vm.crud.registro.Contato.Email" type="text">
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <label class="control-label">Email Alternativo</label>
+                                    <input class="form-control" ng-model="vm.crud.registro.Contato.EmailAlternativo" type="text">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-12 col-sm-5 col-md-5">
+                                    <label class="control-label">Telefone</label>
+                                    <input class="form-control" ng-model="vm.toAdd.telefone.telefone" type="text">
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5">
+                                    <label class="control-label">Tipo</label>
+                                    <select class="form-control" ng-model="vm.toAdd.telefone.tipo"></select>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <label class="control-label transparent">#</label>
+                                    <button class="btn btn-primary btn-full-width">Adicionar</button>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-12">
+                                    <table class="table table-striped table-bordered" wt-responsive-table>
+                                        <thead>
+                                        <tr>
+                                            <th>Telefone</th>
+                                            <th>Tipo</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="telefone in vm.crud.registro.Contato.Telefones">
+                                            <td>{{telefone.Numero}}</td>
+                                            <td>{{telefone.Tipo}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3">
+                            <label class="control-label">Cep</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <label class="control-label">Rua</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-3">
+                            <label class="control-label">Número</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <label class="control-label">Bairro</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <label class="control-label">Cidade</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <label class="control-label">Estado</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <label class="control-label">Nome de Usuário</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <label class="control-label">Senha</label>
+                            <input class="form-control" type="password">
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <label class="control-label">Confirmar Senha</label>
+                            <input class="form-control" type="password">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

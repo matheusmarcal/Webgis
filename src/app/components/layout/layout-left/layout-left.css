@@ -1,0 +1,30 @@
+.row.entry {
+    border: 1px solid #DDDDDD;
+    margin: 0px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.row.entry > .header {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px;
+    height: 40px;
+}
+
+.row.entry > .body {
+    max-height: 72vh;
+    overflow-y: scroll;
+    padding: 0px 15px;
+    background-color: #F9F9F9;
+}
+
+.row.entry .body > .row.entry {
+    margin: 15px 0px;
+}
+
+.text-elipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 90%;
+}

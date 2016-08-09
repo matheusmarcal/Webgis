@@ -1,0 +1,56 @@
+.bar-ferramentas.topo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 60%;
+    background-color: white;
+    top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px;
+}
+
+.bar-ferramentas.inferior {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 60%;
+    background-color: white;
+    bottom: 10px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px;
+}
+
+.bar-ferramentas > i {
+    background-color: white;
+    font-size: 25px;
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 3px;
+    min-width: 45px;
+}
+
+.bar-ferramentas > i.active {
+    background-color: #ADD19E;
+}
+
+.bar-ferramentas > i:last-child {
+}
+
+.bar-ferramentas > i:hover {
+    transform: scale(1.6, 1.6);
+}
+
+.bar-ferramentas.suporte {
+    bottom: 60px;
+    max-width: 50%;
+}
+
+.panel.mini-pad .panel-heading {
+    padding: 5px;
+}

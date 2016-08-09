@@ -1,0 +1,15 @@
+<div>
+    <div class="row entry" ng-repeat="camada in source.esri.properties.layers">
+        <div class="header" title="{{servico.name}}">
+            <div class="row">
+                <div class="col-xs-12">
+                    <b class="pull-left text-elipsis" style="max-width: calc(100% - 60px);">{{camada.name}}</b>
+                    <i style="line-height: 1.228571;margin-right: 5px;" class="glyphicon pull-right"
+                       ng-class="{'glyphicon-chevron-up': interface[camada.name].opened, 'glyphicon-chevron-down': !interface[camada.name].opened}"
+                       ng-click="interface[camada.name].opened = !interface[camada.name].opened"></i>
+                </div>
+            </div>
+        </div>
+        <directive-servico-mapa-camada-legenda-lista style="max-height: 50vh;" ng-if="source.esri.legends.layers[camada.id].legend.length>0" class="body" uib-collapse="!interface[camada.name].opened" source="source" camada="camada"></directive-servico-mapa-camada-legenda-lista>
+    </div>
+</div>

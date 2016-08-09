@@ -1,0 +1,24 @@
+/*.leaflet-control-layers.leaflet-control.leaflet-control-layers-expanded{
+  height: 90%;
+  overflow-y: scroll;
+}
+.leaflet-top.leaflet-right{
+  bottom: 0;
+}
+
+.leaflet-control-layers {
+  visibility: hidden !important;
+}*/
+
+.leaflet-draw.leaflet-control{
+    display: none;
+}
+
+.leaflet-control-layers-overlays{
+    visibility: hidden !important;
+    display: none;
+}
+
+.leaflet-control-layers.leaflet-control.leaflet-control-layers-expanded {
+    max-width: 100%;
+}

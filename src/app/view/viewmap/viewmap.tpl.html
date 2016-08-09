@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <leaflet style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;"
+             lf-center="vm.mapCenter"
+             lf-draw="vm.mapDrawOptions"
+             layers="vm.mapLayers"
+             markers="vm.mapMarkers"
+             event-broadcast="vm.mapEvents"
+             controls="vm.mapControls"
+             paths="vm.mapPaths">
+    </leaflet>
+    <div class="bar-ferramentas topo leaflet-bar">
+        <directive-geocodificador callback="vm.CallbackQuandoSelecionarLocal"></directive-geocodificador>
+    </div>
+    <div class="bar-ferramentas inferior leaflet-bar">
+        <i class="fa fa-pencil" ng-class="{'active':vm.viewInterface.desenho}" title="Desenhar" ng-click="vm.AlternarDesenho()"></i>
+        <i class="fa fa-search" ng-class="{'active':vm.viewInterface.zoomEmGeometria}" title="Zoom em Geometria Desenhada" ng-click="vm.AlternarZoomEmGeometria()"></i>
+        <i class="fa fa-street-view" ng-class="{'active':vm.viewInterface.abrirStreetView}" title="Abrir no Street View" ng-click="vm.AlternarAbrirStreetView()"></i>
+        <i class="fa fa-list-alt" ng-class="{'active':vm.viewInterface.detalhesFeicoes}" title="Informações de Feições"></i>
+    </div>
+</div>
