@@ -4,10 +4,6 @@ html, body {
     height: 100%;
 }
 
-html {
-
-}
-
 body {
     background-image: url(../assets/images/globe-symbol.png);
     background-size: cover;
